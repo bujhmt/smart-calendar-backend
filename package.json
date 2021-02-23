@@ -6,9 +6,8 @@
         "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
         "watch-ts": "tsc -w",
         "dev": "cross-env NODE_ENV=dev concurrently \"npm run prettier-watch\" \"npm run watch-ts\" \"nodemon ./dist/app.js\"",
-        "install": "npm install",
         "build": "tsc",
-        "heroku-postbuild": "npm run server:install && npm run server:build",
+        "heroku-postbuild": "npm install && npm run build",
         "start": "node ./dist/app.js"
     },
     "dependencies": {
