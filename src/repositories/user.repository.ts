@@ -6,8 +6,8 @@ class UserRepository {
         return User.findOne({ _id: userId })
     }
 
-    async updateUserData(userInputDto: UserInputDto, userId: string): Promise<IUser> {
-        return await User.updateOne({ _id: userId }, userInputDto).exec()
+    updateUserData(userInputDto: UserInputDto, userId: string) {
+        return User.updateOne({ _id: userId }, userInputDto).exec()
     }
 }
 
