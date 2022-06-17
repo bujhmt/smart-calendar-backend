@@ -27,7 +27,7 @@ export default {
             if (validationResults.length)
                 return res.status(400).send({ message: validationResults.join(', ') })
 
-            const updatedUser: IUser = await UserRepo.updateUserData(
+            const updatedUser = await UserRepo.updateUserData(
                 userInputDto,
                 req.user.userId as string
             )
